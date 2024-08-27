@@ -4,6 +4,7 @@ from VIPMUSIC.core.git import git
 from VIPMUSIC.core.userbot import Userbot
 from VIPMUSIC.misc import dbb, heroku
 
+from SafoneAPI import SafoneAPI
 from .logging import LOGGER
 
 dirr()
@@ -12,6 +13,7 @@ dbb()
 heroku()
 
 app = VIP()
+api = SafoneAPI()
 userbot = Userbot()
 
 
