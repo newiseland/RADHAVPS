@@ -21,7 +21,7 @@ MESSAGE = f"""**Paid Promotion Available Via Music Bots
 BUTTON = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("𓆩❤️‍🔥𓆪Aᴅᴅ ᴍᴇ ɢʀᴏᴜᴘ𓆩❤️‍🔥𓆪", url=f"https://t.me/ll_RADHA_MUSICBOT?startgroup=s&admin=delete_messages+manage_video_chats+pin_messages+invite_users")
+            InlineKeyboardButton("➻ For More Info ", url=f"https://t.me/ll_SARKAR_MERA_BABU_ll")
         ]
     ]
 )
