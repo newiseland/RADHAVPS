@@ -16,8 +16,7 @@ MESSAGE = f"""**Paid Promotion Available Via Music Bots
 ➻ Daily, weekly, monthly plans available 
 
 ➻ dm : -  @ll_SARKAR_MERA_BABU_ll
-
-➲ 𝐁𝐎𝐓 :** @{app.username}"""
+"""
 
 BUTTON = InlineKeyboardMarkup(
     [
