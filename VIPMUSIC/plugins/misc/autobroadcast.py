@@ -11,9 +11,10 @@ AUTO_GCASTS = f"{AUTO_GCAST}" if AUTO_GCAST else True
 
 MESSAGE = f"""**Paid Promotion Available Via Music Bots
 
-➻ Promote your chatting groups in cheap price.
-➻ Best and proper results in good price 
-➻ Daily, weekly, monthly plans available 
+[Chatting groups, color trading games, channels, Betting Ads or anything] 
+
+Promote anything you want on our platform with best results.
+Daily , Weekly , Monthly plans available. 
 
 dm- @ll_SARKAR_MERA_BABU_ll"""
 
