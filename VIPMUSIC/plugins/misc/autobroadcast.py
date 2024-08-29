@@ -9,14 +9,13 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 AUTO_GCASTS = f"{AUTO_GCAST}" if AUTO_GCAST else True
 
 
-MESSAGE = f"""**🥀𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐌𝐲 𝐀𝐥𝐥 𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭🎙️
+MESSAGE = f"""**Paid Promotion Available Via Music Bots
 
-𝐁𝐎𝐓-1 : @ll_RADHA_MUSICBOT
-𝐁𝐎𝐓-2 : @QUEEN_MUSIC_ROBOT
-𝐁𝐎𝐓-3 : @STAR_MUSICAL_BOT
-𝐁𝐎𝐓-4 : @KHUSHI_MUSIC76_BOT
-𝐁𝐎𝐓-5 : @ll_MAHAKAL_MUSIC_BOT
-𝐒𝐔𝐏𝐏𝐎𝐑𝐓:- @TG_NAME_STYLE
+➻ Promote your chatting groups in cheap price.
+➻ Best and proper results in good price 
+➻ Daily, weekly, monthly plans available 
+
+➻ dm : -  @ll_SARKAR_MERA_BABU_ll
 
 ➲ 𝐁𝐎𝐓 :** @{app.username}"""
 
