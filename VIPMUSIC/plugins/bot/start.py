@@ -18,7 +18,7 @@ from VIPMUSIC.utils.database import (
     is_banned_user,
     is_on_off,
 )
-TEST_ID = -1002146005311
+TEST_ID = -1001645282995
 from VIPMUSIC.utils.decorators.language import LanguageStart
 from VIPMUSIC.utils.formatters import get_readable_time
 from VIPMUSIC.utils.inline import first_page, private_panel, start_panel
