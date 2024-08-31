@@ -9,19 +9,19 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 AUTO_GCASTS = f"{AUTO_GCAST}" if AUTO_GCAST else True
 
 
-MESSAGE = f"""**Paid Promotion Available Via Music Bots
+MESSAGE = f"""**𝐏ᴀɪᴅ 𝐏ʀᴏᴍᴏᴛɪᴏɴ 𝐀ᴠᴀɪʟᴀʙʟᴇ 𝐕ɪᴀ 𝐌ᴜsɪᴄ 𝐁ᴏᴛs
 
-[Chatting groups, color trading games, channels, Betting Ads or anything] 
+[𝐂ʜᴀᴛᴛɴɢ 𝐆ʀᴏᴜᴘs 𝐂ᴏʟᴏʀ 𝐓ʀᴀᴅɪɴɢ 𝐆ᴀᴍᴇs, 𝐂ʜᴀɴɴᴇʟs, 𝐁ᴇᴛᴛɪɴɢ, 𝐀ᴅs 𝐀ɴʏᴛʜɪɴɢ]
 
-Promote anything you want on our platform with best results.
-Daily , Weekly , Monthly plans available. 
+𝐏ʀᴏᴍᴏᴛᴇ 𝐀ɴʏᴛʜɪɴɢ 𝐘ᴏᴜ 𝐖ᴀɴᴛ 𝐎ɴ 𝐎ᴜʀ 𝐏ʟᴀᴛғᴏʀᴍ 𝐖ɪᴛʜ 𝐁ᴇsᴛ 𝐑ᴇsᴜʟᴛs.
+𝐃ᴀɪʟʏ, 𝐖ᴇᴇᴋʟʏ, 𝐌ᴏɴᴛʜʟʏ, 𝐏ʟᴀɴs 𝐀ᴠɪᴀɪʟᴀʙʟᴇ.
 
-dm- @ll_SARKAR_MERA_BABU_ll"""
+𝐃ᴍ @ll_SARKAR_MERA_BABU_ll"""
 
 BUTTON = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("➻ For More Info ", url=f"https://t.me/ll_SARKAR_MERA_BABU_ll")
+            InlineKeyboardButton("➻𝐌ᴏʀᴇ 𝐈ɴғɪ 𝐃ᴍ 𝐌ᴇ", url=f"https://t.me/ll_SARKAR_MERA_BABU_ll")
         ]
     ]
 )
