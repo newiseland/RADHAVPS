@@ -21,7 +21,7 @@ MESSAGE = f"""**𝐏ᴀɪᴅ 𝐏ʀᴏᴍᴏᴛɪᴏɴ 𝐀ᴠᴀɪʟᴀʙʟᴇ 
 BUTTON = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton("➻𝐌ᴏʀᴇ 𝐈ɴғɪ 𝐃ᴍ 𝐌ᴇ", url=f"https://t.me/ll_SARKAR_MERA_BABU_ll")
+            InlineKeyboardButton("➻𝐌ᴏʀᴇ 𝐈ɴғᴏ 𝐃ᴍ 𝐌ᴇ", url=f"https://t.me/ll_SARKAR_MERA_BABU_ll")
         ]
     ]
 )
