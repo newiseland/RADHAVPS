@@ -70,7 +70,7 @@ def stream_markup(_, chat_id):
 
         [
             InlineKeyboardButton(
-                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
+                text="𝐏ʀᴏᴍᴏᴛɪᴏɴ 𝐀ᴠᴀɪʟᴀʙʟᴇ", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
             ),
         ],
         [
@@ -109,7 +109,7 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
     buttons = [
         [
            InlineKeyboardButton(
-                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
+                text="𝐏ʀᴏᴍᴏᴛɪᴏɴ 𝐀ᴠᴀɪʟᴀʙʟᴇ", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
             ),
         ],
         [
@@ -139,7 +139,7 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
     buttons = [
         [
             InlineKeyboardButton(
-                text="❰𝙊𝙒𝙉𝙀𝙍❱", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
+                text="𝐏ʀᴏᴍᴏᴛɪᴏɴ 𝐀ᴠᴀɪʟᴀʙʟᴇ", url="https://t.me/ll_SARKAR_MERA_BABU_ll"
             ),
         ],
         [
