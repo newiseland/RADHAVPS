@@ -1,141 +1,138 @@
-import re
+from pyrogram import Client, filters
+import requests
+import random
 import os
-from os import getenv
-from dotenv import load_dotenv
-from pyrogram import filters
-
-load_dotenv()
-
-# Get this value from my.telegram.org/apps
-API_ID = int(getenv("API_ID"))
-API_HASH = getenv("API_HASH")
-# Get your token from @BotFather on Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN")
-
-# Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
-
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 16000))
-
-# Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID"))
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID","-1001645282995"))
-# Get this value from  on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID"))
-
-## Fill these variables if you're deploying on heroku.
-# Your heroku app name
-HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
-# Get it from http://dashboard.heroku.com/account
-HEROKU_API_KEY = getenv("HEROKU_API_KEY")
-
-UPSTREAM_REPO = getenv(
-    "UPSTREAM_REPO",
-    "https://github.com/SARKAROP123/RADHAVPS",
+import re
+import asyncio
+import time
+from VIPMUSIC import app
+from VIPMUSIC.utils.database import add_served_chat, delete_served_chat
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from VIPMUSIC.utils.database import get_assistant
+import asyncio
+from VIPMUSIC.misc import SUDOERS
+from VIPMUSIC.mongo.afkdb import HEHE
+from VIPMUSIC.core.userbot import Userbot
+from pyrogram import Client, filters
+from pyrogram.errors import UserAlreadyParticipant
+from VIPMUSIC import app
+import asyncio
+import random
+from pyrogram import Client, filters
+from pyrogram.enums import ChatMemberStatus
+from pyrogram.errors import (
+    ChatAdminRequired,
+    InviteRequestSent,
+    UserAlreadyParticipant,
+    UserNotParticipant,
 )
-UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
-GIT_TOKEN = getenv(
-    "GIT_TOKEN", None
-)  # Fill this variable if your upstream repository is private
+from VIPMUSIC import app
+from VIPMUSIC.utils.vip_ban import admin_filter
+from VIPMUSIC.utils.decorators.userbotjoin import UserbotWrapper
+from VIPMUSIC.utils.database import get_assistant, is_active_chat
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/TG_NAME_STYLE")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/TKS_CHAT_JOIN_BABY")
+@app.on_message(
+    filters.command("repo")
+    & filters.group)
+async def help(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/41ec8f174b98e691047f7.png",
+        caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🌱ƨσʋяcɛ🌱", url=f"https://t.me/ll_SARKAR_MERA_BABU_ll")
+                ]
+            ]
+        ),
+    )
 
-# Set this to True if you want the assistant to automatically leave chats after an interval
-AUTO_LEAVING_ASSISTANT = False
+@app.on_message(
+    filters.command("repo")
+    & filters.group)
+async def help(client: Client, message: Message):
+    userbot = await get_assistant(chat_id)
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/41ec8f174b98e691047f7.png",
+        caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🌱ƨσʋяcɛ🌱", url=f"https://t.me/ll_SARKAR_MERA_BABU_ll")
+                ]
+            ]
+        ),
+    )
 
-#Auto Gcast/Broadcast Handler (True = broadcast on , False = broadcast off During Hosting, Dont Do anything here.)
-AUTO_GCAST = os.getenv("AUTO_GCAST")
-#Auto Broadcast Message That You Want Use In Auto Broadcast In All Groups.
-AUTO_GCAST_MSG = getenv("AUTO_GCAST_MSG", "")
+@app.on_message(
+    filters.command("repo")
+    & filters.private)
+async def help(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://telegra.ph/file/41ec8f174b98e691047f7.png",
+        caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "🌱ƨσʋяcɛ🌱", url=f"https://t.me/ll_SARKAR_MERA_BABU_ll")
+                ]
+            ]
+        ),
+    )
 
-# Get this credentials from https://developer.spotify.com/dashboard
-SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
-SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", None)
+# --------------------------------------------------------------------------------- #
 
-# Maximum limit for fetching playlist's track from youtube, spotify, apple links.
-PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 2500))
-
-# Telegram audio and video file size limit (in bytes)
-TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", 104857600))
-TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 1073741824))
-# Checkout https://www.gbmb.org/mb-to-bytes for converting mb to bytes
-
-# Time after which bot will suggest random chats about bot commands.
-AUTO_SUGGESTION_TIME = int(
-    getenv("AUTO_SUGGESTION_TIME", "3")
-)  # Remember to give value in Seconds
-
-# Set it True if you want to bot to suggest about bot commands to random chats of your bots.
-AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "True")
-# Cleanmode time after which bot will delete its old messages from chats
-CLEANMODE_DELETE_MINS = int(
-    getenv("CLEANMODE_MINS", "5")
-)  # Remember to give value in Seconds
-
-# Get your pyrogram v2 session from @VIP_STRING_ROBOT on Telegram
-STRING1 = getenv("STRING_SESSION", None)
-STRING2 = getenv("STRING_SESSION2", None)
-STRING3 = getenv("STRING_SESSION3", None)
-STRING4 = getenv("STRING_SESSION4", None)
-STRING5 = getenv("STRING_SESSION5", None)
-
-
-#    __      _______ _____    ___  __ _    _  _____ _____ _____   _____   ____ _______ 
-#    \ \    / /_   _|  __ \   |  \/  | |  | |/ ____|_   _/ ____|  |  _ \ / __ \__   __|
-#     \ \  / /  | | | |__) |  | \  / | |  | | (___   | || |       | |_) | |  | | | |   
-#      \ \/ /   | | |  ___/   | |\/| | |  | |\___ \  | || |       |  _ <| |  | | | |   
-#       \  /   _| |_| |       | |  | | |__| |____) |_| || |____   | |_) | |__| | | |   
-#        \/   |_____|_|       |_|  |_|\____/|_____/|_____\_____|  |____/ \____/  |_|   
-
-
-
-BANNED_USERS = filters.user()
-adminlist = {}
-lyrical = {}
-votemode = {}
-autoclean = []
-confirmer = {}
-chatstats = {}
-userstats = {}
-clean = {}
-
-autoclean = []
-
-START_IMG_URL = getenv(
-    "START_IMG_URL", "https://telegra.ph/file/41ec8f174b98e691047f7.png"
-)
-PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://telegra.ph/file/a494ac7666704a51d6448.png"
-)
-PLAYLIST_IMG_URL = "https://telegra.ph/file/41ec8f174b98e691047f7.png"
-STATS_IMG_URL = "https://telegra.ph/file/41ec8f174b98e691047f7.png"
-TELEGRAM_AUDIO_URL = "https://telegra.ph/file/41ec8f174b98e691047f7.png"
-TELEGRAM_VIDEO_URL = "https://telegra.ph/file/41ec8f174b98e691047f7.png"
-STREAM_IMG_URL = "https://telegra.ph/file/41ec8f174b98e691047f7.png"
-SOUNCLOUD_IMG_URL = "https://telegra.ph/file/41ec8f174b98e691047f7.png"
-YOUTUBE_IMG_URL = "https://telegra.ph/file/41ec8f174b98e691047f7.png"
-SPOTIFY_ARTIST_IMG_URL = "https://telegra.ph/file/41ec8f174b98e691047f7.png"
-SPOTIFY_ALBUM_IMG_URL = "https://telegra.ph/file/41ec8f174b98e691047f7.png"
-SPOTIFY_PLAYLIST_IMG_URL = "https://telegra.ph/file/41ec8f174b98e691047f7.png"
+@app.on_message(filters.command(["hi", "hii", "hello", "hui", "good", "gm", "ok", "bye", "welcome", "thanks"] ,prefixes=["/", "!", "%", ",", "", ".", "@", "#"]) & filters.group)
+async def bot_check(_, message):
+    chat_id = message.chat.id
+    await add_served_chat(chat_id)
 
 
-def time_to_seconds(time):
-    stringt = str(time)
-    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
+# --------------------------------------------------------------------------------- #
 
 
-DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 
 
-if SUPPORT_CHANNEL:
-    if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
+import asyncio
+import time
+
+@app.on_message(filters.command("gadd") & filters.user(int(HEHE)))
+async def add_all(client, message):
+    command_parts = message.text.split(" ")
+    if len(command_parts) != 2:
+        await message.reply("**⚠️ ɪɴᴠᴀʟɪᴅ ᴄᴏᴍᴍᴀɴᴅ ғᴏʀᴍᴀᴛ. ᴘʟᴇᴀsᴇ ᴜsᴇ ʟɪᴋᴇ » `/gadd @ll_RADHA_MUSICBOT`**")
+        return
+    
+    bot_username = command_parts[1]
+    try:
+        userbot = await get_assistant(message.chat.id)
+        bot = await app.get_users(bot_username)
+        app_id = bot.id
+        done = 0
+        failed = 0
+        lol = await message.reply("🔄 **ᴀᴅᴅɪɴɢ ɢɪᴠᴇɴ ʙᴏᴛ ɪɴ ᴀʟʟ ᴄʜᴀᴛs!**")
+        
+        async for dialog in userbot.get_dialogs():
+            if dialog.chat.id == -1001645282995:
+                continue
+            try:
+                await userbot.add_chat_members(dialog.chat.id, app_id)
+                done += 1
+                await lol.edit(
+                    f"**🔂 ᴀᴅᴅɪɴɢ {bot_username}**\n\n**➥ ᴀᴅᴅᴇᴅ ɪɴ {done} ᴄʜᴀᴛs ✅**\n**➥ ғᴀɪʟᴇᴅ ɪɴ {failed} ᴄʜᴀᴛs ❌**\n\n**➲ ᴀᴅᴅᴇᴅ ʙʏ»** @{userbot.username}"
+                )
+            except Exception as e:
+                failed += 1
+                await lol.edit(
+                    f"**🔂 ᴀᴅᴅɪɴɢ {bot_username}**\n\n**➥ ᴀᴅᴅᴇᴅ ɪɴ {done} ᴄʜᴀᴛs ✅**\n**➥ ғᴀɪʟᴇᴅ ɪɴ {failed} ᴄʜᴀᴛs ❌**\n\n**➲ ᴀᴅᴅɪɴɢ ʙʏ»** @{userbot.username}"
+                )
+            await asyncio.sleep(3)  # Adjust sleep time based on rate limits
+        
+        await lol.edit(
+            f"**➻ {bot_username} ʙᴏᴛ ᴀᴅᴅᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ🎉**\n\n**➥ ᴀᴅᴅᴇᴅ ɪɴ {done} ᴄʜᴀᴛs ✅**\n**➥ ғᴀɪʟᴇᴅ ɪɴ {failed} ᴄʜᴀᴛs ❌**\n\n**➲ ᴀᴅᴅᴇᴅ ʙʏ»** @{userbot.username}"
         )
-
-if SUPPORT_CHAT:
-    if not re.match("(?:http|https)://", SUPPORT_CHAT):
-        raise SystemExit(
-            "[ERROR] - Your SUPPORT_CHAT url is wrong. Please ensure that it starts with https://"
-)
+    except Exception as e:
+        await message.reply(f"Error: {str(e)}")
