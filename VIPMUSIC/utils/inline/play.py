@@ -75,7 +75,7 @@ def stream_markup(_, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="Group", url="https://t.me/TG_NAME_STYLE"
+                text="Group", url="https://t.me/TG_NAME_STYLE/4602"
             ),
         ],
     ]
@@ -114,7 +114,7 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
         ],
         [
             InlineKeyboardButton(
-                text="Group", url="https://t.me/TG_NAME_STYLE"
+                text="Group", url="https://t.me/TG_NAME_STYLE/4602"
             ),
 
         ],
@@ -144,7 +144,7 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
         ],
         [
             InlineKeyboardButton(
-                text="Group", url="https://t.me/TG_NAME_STYLE"
+                text="Group", url="https://t.me/TG_NAME_STYLE/4602"
             ),
         ],
         [
