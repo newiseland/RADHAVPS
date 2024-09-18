@@ -173,7 +173,7 @@ async def greet_new_members(_, member: ChatMemberUpdated):
         
         # Add the modified condition here
         if member.new_chat_member and not member.old_chat_member:
-            welcome_text = f"""**Wᴇʟᴄᴏᴍᴇ** {user.mention}\n**@{user.username}**"""
+            welcome_text = f"""**🔥𝐇𝐞𝐲 𝐖𝐞𝐥𝐜𝐨𝐦𝐞🦋** {user.mention}\n**@{user.username}**"""
             await asyncio.sleep(3) 
             await userbot.send_message(chat_id, text=welcome_text)
     except Exception as e:
