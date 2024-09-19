@@ -12,7 +12,6 @@ dbb()
 heroku()
 
 app = VIP()
-api = SafoneAPI()
 userbot = Userbot()
 
 
